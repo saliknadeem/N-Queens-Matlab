@@ -1,7 +1,6 @@
 function [population] = updatePopulation(population, probMutation, probCrossOver)
     NQueens = size(population,2);
     populationSize = size(population,1);
-
     
     if mod(populationSize,2) == 0
         sizePop = populationSize;

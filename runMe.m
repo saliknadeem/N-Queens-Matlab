@@ -25,15 +25,15 @@
 close;clear;
 
 %% Main parameters
-NQueens = 50;
-epochs = 1000;
+NQueens = 8;
+epochs = 500;
 populationSize = 10;
 probMutation = 0.15;
 probCrossOver = 0.75;
 
 %% Running the experiments
 
-population = initPopulation(NQueens,populationSize);
+[population, badPop] = initPopulation(NQueens,populationSize);
 fprintf('------initial fitness------')
 fitness = checkFitness(population)
 

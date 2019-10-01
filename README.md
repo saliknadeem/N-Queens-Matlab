@@ -12,4 +12,5 @@ https://arxiv.org/ftp/arxiv/papers/1802/1802.02006.pdf
 2. **checkFitness.m** - takes population variable as input and calculates the fitness of each chromosome
 3. **updatePopulation.m** - this performs the mating, generating 2 child per pair of parents and implements crossover and mutation of the
 chromosoes and replaces the parents with the children if they are more fit
-4. **displayBoard.m** - a nice function to visualize the result of a chromosome
+4. **sortPopulation.m** - this takes the population and its fitness values and sorts the population based on the fitness values
+5. **displayBoard.m** - a nice function to visualize the result of a chromosome

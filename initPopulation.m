@@ -10,7 +10,6 @@ function [population, badPopulation] = initPopulation(NQueens,populationSize)
     
     fitness = checkFitness(totalPopulation);
     sortedPop = sortPopulation(totalPopulation, fitness);
-    
     population = sortedPop(1:populationSize,:);
     badPopulation = sortedPop(populationSize:populationSize+badPopSize,:);
     

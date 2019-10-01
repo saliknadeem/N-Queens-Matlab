@@ -7,7 +7,7 @@ function [sortedPop] = sortPopulation(population, fitness)
     
     sortedPop = population;
     
-    for i = 1:length(population)
+    for i = 1:length(population(:,1))
         sortedPop(i,:) = population(sortedFitness(i,1),:);
     end
     

@@ -1,3 +1,4 @@
+%% Function to initialize a main population and smaller set of bad population
 function [population, badPopulation] = initPopulation(NQueens,populationSize)
     badPopSize = floor(sqrt(populationSize));
     totalPopulation = zeros(populationSize+badPopSize,NQueens);

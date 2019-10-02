@@ -1,3 +1,4 @@
+%% Function to check the fitness of a given population
 function [fitness] = checkFitness(population)
     NQueens = size(population,2);
     populationSize = size(population,1);

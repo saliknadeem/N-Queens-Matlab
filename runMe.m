@@ -25,11 +25,11 @@
 close;clear;
 
 %% Main parameters
-NQueens = 40;
-epochs = 1000;
+NQueens = 10;
+epochs = 2000;
 populationSize = 10;
-probMutation = 0.15;
-probCrossOver = 0.90;
+probMutation = 0.3;
+probCrossOver = 0.80;
 
 %% Running the experiments
 

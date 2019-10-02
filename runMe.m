@@ -17,28 +17,36 @@
 %   per pair of parents and implements crossover and mutation of the
 %   chromosoes and replaces the parents with the children if they are more
 %   fit
-%   4- displayBoard.m - a nice funtion to visualize the result of a
+%   4- sortPopulation.m - this takes in the population and its fitness
+%   values and sorts the population based on the fitness values 
+%   5- geneticOperations.m - this takes in 2 parents and performs the
+%   crossover and mutaiton genetic functions to get 2 child chromosomes
+%   6- displayBoard.m - a nice funtion to visualize the result of a
 %   chromosome
 %
 
 
 close;clear;
+warning('off','all')
+warning
 
 %% Main parameters
-NQueens = 10;
+NQueens = 8;
 epochs = 2000;
 populationSize = 10;
-probMutation = 0.3;
-probCrossOver = 0.80;
+probMutation = 0.4;
+probCrossOver = 0.90;
 
 %% Running the experiments
 
-[population, badPop] = initPopulation(NQueens,populationSize);
+[population, badPopulation] = initPopulation(NQueens,populationSize);
 fprintf('------initial fitness------')
 fitness = checkFitness(population)
+fprintf('------initial bad pop------')
+fitness = checkFitness(badPopulation)
 
 for evolve=1:epochs
-population = updatePopulation(population, probMutation, probCrossOver);
+population = updatePopulation(population, badPopulation, probMutation, probCrossOver);
 fitness = checkFitness(population);
 I = find(fitness == 0);
 if size(I,2) == populationSize
@@ -55,6 +63,8 @@ fitness = checkFitness(population)
 I = find(fitness == 0);
 if size(I,2) > 0
     displayBoard(NQueens,population(I(1),:));
+    fprintf('Unique solutions\n');
+    unique(population(:,:),'rows')
 elseif size(I,2) == 0
     fprintf('didnt find a solution with no conflicts\n');
 end
